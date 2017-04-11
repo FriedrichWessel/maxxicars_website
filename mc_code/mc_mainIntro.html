@@ -1,0 +1,77 @@
+<html>
+	<head>
+		<title>maxxicars-dresden</title>
+		<meta name="description" content="">
+		<meta name="author" content="Friedrich Wessel">
+		<meta name="keywords" content="Flughafen. Berlin, Dresden. Taxi. Mietwagen">
+		<meta name="generator" content="">
+		<link rel="stylesheet" href="layout/mc_layout.css" type="text/css"></link>
+         <script language="JavaScript">
+	var mc_width = 10;
+	var mc_height = 10;
+         var mc_posL = 250;
+         var mc_posT = 250;
+         function mc_introAnim()
+         {
+                mc_height=mc_height+10;
+                mc_width=mc_width+18;
+                mc_posL=mc_posL-9;
+                mc_posT=mc_posT-5;
+                 if (mc_height==210) mc_height=212;
+                 if (mc_width==370) mc_height=378;
+                 if (mc_height<=120)
+                 {
+                 	document.getElementById("mc_carsID").style.width=mc_width;
+			document.getElementById("mc_carsID").style.height=mc_height;
+			document.getElementById("mc_carsID").style.left=mc_posL;
+			document.getElementById("mc_carsID").style.top=mc_posT;
+	                 f_activL = window.setTimeout("mc_introAnim()", 20);
+         	}
+                 if (mc_height>120)
+                 {
+			document.getElementById("mc_carsID").style.width=mc_width;
+			document.getElementById("mc_carsID").style.height=mc_height;
+			document.getElementById("mc_carsID").style.left=mc_posL;
+			document.getElementById("mc_carsID").style.top=mc_posT;
+
+			mc_posL=mc_posL+8;
+	       		mc_posT=mc_posT-5;
+                  	if (mc_posL==300) mc_posL=301;
+                 	if (mc_posT>0)
+	                 {
+                 	document.getElementById("mc_carsID").style.left=mc_posL;
+			document.getElementById("mc_carsID").style.top=mc_posT;
+			f_activL = window.setTimeout("mc_introAnim2()", 10);
+         		}
+                 }
+                 //mc_introAnim2();
+                 //alert(mc_posL+"/"+mc_posT);
+         }
+         function mc_introAnim2()
+         {
+		mc_posL=mc_posL+8;
+		mc_posT=mc_posT-5;
+                  if (mc_posL==300) mc_posL=301;
+                 if (mc_posT>0)
+                 {
+			document.getElementById("mc_carsID").style.left=mc_posL;
+			document.getElementById("mc_carsID").style.top=mc_posT;
+	                 f_activL = window.setTimeout("mc_introAnim2()", 10);
+         	}
+         }
+
+
+
+	</script>
+<noscript></noscript>
+
+         </head>
+
+<body onLoad="Javascript: mc_introAnim()" bgcolor="#FFFFFF">
+
+        <img src="../mc_images/mc_topLine03.jpg" border="0" style="position:absolute; left: 0px; top:48px;" >
+	<img src="../mc_images/mc_carsIntro.jpg" border="0" style="position:absolute; left: 301px; top:0px;" id="mc_carsID">
+
+
+</body>
+</html>

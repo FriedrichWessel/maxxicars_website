@@ -1,0 +1,63 @@
+<html>
+	<head>
+		<title>maxxicars-dresden</title>
+		<meta name="description" content="">
+		<meta name="author" content="Friedrich Wessel">
+		<meta name="keywords" content="Flughafen. Berlin, Dresden. Taxi. Mietwagen">
+		<meta name="generator" content="">
+		<link rel="stylesheet" href="layout/mc_layout.css" type="text/css"></link>
+           <script language="Javascript">
+
+         var f_content;
+         var f_id=120;
+
+         function mc_change_content(f_id)
+         {
+                 if (f_id==120) parent.document.getElementById("mc_contentID").src="mc_mainStart.html";
+		if (f_id==130) parent.document.getElementById("mc_contentID").src="mc_mainBuchungen.html";
+		if (f_id==140) parent.document.getElementById("mc_contentID").src="mc_mainKontakt.html";
+		if (f_id==150) parent.document.getElementById("mc_contentID").src="mc_mainImpressum.html";
+         	mc_changeOut_image(120); mc_changeOut_image(130); mc_changeOut_image(140); mc_changeOut_image(150);
+         }
+
+           function mc_change_image(f_id)
+         {
+
+                 if (f_id==120) document.getElementById("mc_startseite_ID").src="../mc_images/mc_startseite_on.jpg";
+                 if (f_id==130) document.getElementById("mc_buchungen_ID").src="../mc_images/mc_buchungen_on.jpg";
+                 if (f_id==140) document.getElementById("mc_kontakt_ID").src="../mc_images/mc_kontakt_on.jpg";
+		if (f_id==150) document.getElementById("mc_impressum_ID").src="../mc_images/mc_impressum_on.jpg";
+         }
+
+         function mc_changeOut_image(f_id)
+         {
+                 f_content=parent.document.getElementById("mc_contentID").src;
+                 if (f_id==120 && f_content!="mc_mainStart.html") document.getElementById("mc_startseite_ID").src="../mc_images/mc_startseite_off.jpg";
+                 if (f_id==130 && f_content!="mc_mainBuchungen.html") document.getElementById("mc_buchungen_ID").src="../mc_images/mc_buchungen_off.jpg";
+                 if (f_id==140 && f_content!="mc_mainKontakt.html") document.getElementById("mc_kontakt_ID").src="../mc_images/mc_kontakt_off.jpg";
+                 if (f_id==150 && f_content!="mc_mainImpressum.html") document.getElementById("mc_impressum_ID").src="../mc_images/mc_impressum_off.jpg";
+         }
+
+         var mc_posL=0;
+         function mc_introAnim()
+         {
+                 mc_posL=mc_posL+10;
+                 if (mc_posL<400)
+                 {
+                 	document.getElementById("mc_whiteCardID").style.left=mc_posL;
+                         f_activL = window.setTimeout("mc_introAnim()", 6);
+		}
+         }
+
+         </script>
+
+
+
+         </head>
+
+<body onLoad="Javascript: mc_introAnim()" bgcolor="#FFFFFF">
+         <img id="mc_topLine01_ID" src="../mc_images/mc_topLine01.jpg" " style="position:absolute; left:0px; top: 48px;">
+	<img src="../mc_images/mc_whiteCard.jpg" border="0" style="position:absolute; left: 0px; top:48px; width:900px; height:64px" id="mc_whiteCardID">
+
+</body>
+</html>
